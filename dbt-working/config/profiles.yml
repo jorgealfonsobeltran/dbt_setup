@@ -1,0 +1,23 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: 192.168.1.18
+      port: 8001
+      user: dbt_test
+      pass: dbt_test
+      dbname: dbt_test
+      schema: dbt_test
+
+    prod:
+      type: redshift
+      method: iam
+      cluster_id: [cluster_id]
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_user]
+      dbname: [dbname]
+      schema: [prod_schema]

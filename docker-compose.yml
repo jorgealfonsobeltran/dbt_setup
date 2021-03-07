@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  db:
+    build: ./postgres
+    ports:
+      - "8001:5432"
+    
+  app:
+    build: ./dbt-working
+    links:
+      - "db:dbt_test"
