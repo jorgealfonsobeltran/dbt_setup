@@ -9,3 +9,4 @@ services:
     build: ./dbt-working
     links:
       - "db:dbt_test"
+    tty: true
